@@ -1,19 +1,17 @@
 import React from "react";
-import { Helmet } from "react-helmet";
-import Header from "./components/Header";
-import Navbar from "./components/Navbar";
-import Main from "./components/Main";
-import Footer from "./components/Footer";
+import Home from "./routes/Home";
+import Reservations from "./routes/Reservations";
+
+import {Route, Routes} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Helmet>{/* Step 1: Add the appropriate description */}</Helmet>
-      <Header />
-      <Navbar />
-      <Main />
-      <Footer />
-    </div>
+    <>
+      <Routes>
+        <Route path = "/" element = {<Home />}/>
+        <Route path = "/reservations" element = {<Reservations />}/>
+      </Routes>
+    </>
   );
 }
 
